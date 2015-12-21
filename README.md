@@ -3,5 +3,5 @@
 * [Java8](java/java.md)
   * stream
   * optional
-* SpringBoot
-* Amazonサービス
+* [SpringBoot](java/framework/springboot/readme.md)
+* [Amazonサービス](amazon/aws/redme.md)
