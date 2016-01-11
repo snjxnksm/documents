@@ -1,8 +1,5 @@
 # 目次
 
-* [Java8](java/java.md)
-  * stream
-  * optional
+* [Java8](java/readme.md)
 * [SpringBoot](java/framework/springboot/readme.md)
-  * テンプレートエンジン [mustache](java/framework/springboot/mastache.md)
-* [Amazonサービス](amazon/aws/redme.md)
+* [gradle](java/framework/gradle/readme.md)
