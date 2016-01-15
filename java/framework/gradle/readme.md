@@ -10,7 +10,7 @@ gradleの特徴は、antのような自由度とmavenのような強力なライ
 
 # インストール方法
 
-1. [gradle公式サイト](http://gradle.org/)からzipファイルを取得。    
+1. [gradle公式サイト](http://gradle.org/)からzipファイルを取得。
 2. zipファイルを任意のフォルダに展開。  
 3. 環境変数を作成  
 
@@ -33,7 +33,7 @@ gradleの特徴は、antのような自由度とmavenのような強力なライ
 # 依存ライブラリの追加
 
 build.guradleに記述を追加することで、ライブラリの管理を行います。
-以下は、SpringBootを指標する場合。
+以下は、[SpringBoot](../springboot/readme.md)を指標する場合。
 ```
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
@@ -56,3 +56,17 @@ dependencies {
     testCompile("junit:junit:4.12")
 }
 ```
+依存関係を記述する文字列は、mavenライブラリと共有できます。
+http://mvnrepository.com/
+
+
+# eclipseから利用する場合。
+
+eclipseマーケットプレイスから、gradleプラグインをインストールします。
+
+1. eclipseを起動します。
+2. ヘルプ → マーケットプレイスを開きます。
+3. 検索窓に「gradle」と検索します。
+4. 「Gradle Instegration for Eclipse」をインストール
+5. 「利用条件」を許諾します。
+6. eclipseを再起動します。
