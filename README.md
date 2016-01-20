@@ -1,4 +1,4 @@
-# 目次
+# トップページ
 
 * [Java8](java/readme.md)
 * [SpringBoot](java/framework/springboot/readme.md)
