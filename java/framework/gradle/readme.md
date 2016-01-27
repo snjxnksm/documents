@@ -33,7 +33,7 @@ gradleの特徴は、antのような自由度とmavenのような強力なライ
 # 依存ライブラリの追加
 
 build.guradleに記述を追加することで、ライブラリの管理を行います。
-以下は、[SpringBoot](../springboot/readme.md)を指標する場合。
+以下は、[SpringBoot](../springboot/readme.md)を指定する場合。
 ```
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')

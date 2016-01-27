@@ -18,8 +18,8 @@ eclipseから利用する場合を想定します。
 
 ## gradleプラグインをインストールする。
 
+springbootのプロジェクトを管理するために[gradle](../gradele/readme.md)を利用します。  
 [gradle](../gradele/readme.md)をeclipseから利用するためプラグインをインストールします。  
-
 
 1. eclipseを起動します。
 2. ヘルプ → マーケットプレイスを開きます。
