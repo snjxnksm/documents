@@ -10,3 +10,13 @@
 
 作成予告です。UMLを使いましょう。
 * [PlantUML](design/plantuml.md)
+
+# 認証・認可の仕組み
+
+* OAuth2
+
+# Webサーバと携帯端末とのおしゃべり
+
+* プッシュ通知
+* REST-API
+* カスタムURLスキーム
