@@ -23,20 +23,16 @@ Windows版の場合は、インストール直後は中華フォントになっ�
 
 // style the background color of the tree view
 .tree-view {
-  // background-color: whitesmoke;
   font-family: "Meiryo";
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
   font-family: "ＭＳ ゴシック";
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
-  // border-color: red;
   font-family: "ＭＳ ゴシック";
 }
 
