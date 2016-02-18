@@ -7,4 +7,5 @@ https://atom.io/
 
 やっとくといいtips。
 
+* [パッケージの導入](atom_package.md)
 * [スタイルシートの変更](atom_css.md)
