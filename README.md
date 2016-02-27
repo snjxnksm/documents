@@ -19,6 +19,10 @@
 * REST-API
 * カスタムURLスキーム
 
+# Linux
+
+* [CentOS7](centos7/readme.md)
+
 # ソフトウェア
 
 * [Atomエディタ](software/atom.md)
