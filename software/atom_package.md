@@ -16,3 +16,5 @@ ctrl+oで、カーソル位置にあるファイルを開く。なければ新�
 [planuml](../design/plantuml.md) のプレビュー。いちいちコマンドで変換しなくてもショートカット一発で表示。  
 * markdown-scroll-sync  
 markdownの編集画面とプレビュー画面のスクロールを同期する。  
+* open-unsupported-files  
+excelやwordなど、atomでサポートされていないファイルを対応するアプリケーションで開く。  
