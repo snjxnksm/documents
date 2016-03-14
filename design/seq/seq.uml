@@ -1,8 +1,9 @@
 @startuml
 
-actor らすかる
 actor オスカル
 actor アンドレ
+actor らすかる
+
 
 オスカル -> アンドレ : あんどれー！
 activate アンドレ
