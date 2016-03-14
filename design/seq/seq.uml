@@ -1,12 +1,16 @@
 @startuml
 
-actor アンドレ
-actor オスカル
 actor らすかる
+actor オスカル
+actor アンドレ
 
-アンドレ -> オスカル : あんどれー！
-アンドレ <- オスカル : おすかるー！
+オスカル -> アンドレ : あんどれー！
+activate アンドレ
+オスカル <- アンドレ : おすかるー！
+deactivate アンドレ
 アンドレ <- らすかる : きゅー！
+activate アンドレ
 アンドレ -> らすかる : だれだおまえ？
+deactivate アンドレ
 
 @enduml
