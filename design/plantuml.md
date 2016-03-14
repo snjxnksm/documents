@@ -10,23 +10,4 @@ PlantUMLを使えば、ソースはプレーンテキストで記述するので
 
 * 例題  
 ![シーケンス図１](seq/seq.png)  
-
-```
-@startuml
-
-actor オスカル
-actor アンドレ
-actor らすかる
-
-
-オスカル -> アンドレ : あんどれー！
-activate アンドレ
-オスカル <- アンドレ : おすかるー！
-deactivate アンドレ
-アンドレ <- らすかる : きゅー！
-activate アンドレ
-アンドレ -> らすかる : だれだおまえ？
-deactivate アンドレ
-
-@enduml
-```
+[シーケンス図１コード](seq/seq.uml)  
