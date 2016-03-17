@@ -72,7 +72,7 @@ systemctl status mysqld
   33. パスワードを変更する  
   8文字以上、英大文字小文字数字記号の4種類を含む必要がある
   ```
-  mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootOptim123+'
+  mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootmysql123+'
   ```
   34. 初期DBを作成する
   ```
@@ -105,3 +105,20 @@ systemctl status nginx
 ```
 systemctl stop nginx
 ```
+
+### nginxの設定
+
+/etc/nginx/nginx.conf がおおもとの設定ファイルだが、その中から /etc/nginx/conf.d/以下 をインクルードしている。  
+なので、/etc/nginx/conf.d/に様々な条件のファイルを作成すればよい。  
+インストール直後は以下の２ファイルがある。
+
+* /etc/nginx/conf.d/default.conf  
+基本的なデフォルト設定が入っている。  
+変更した後は、以下のコマンドで文法が正しいか確認する。  
+```
+> nginx -t -c /etc/nginx/nginx.conf
+```
+* /etc/nginx/conf.d/example_ssl.conf  
+httpsでアクセスできるようにするための設定が入っている。  
+初期状態は中身がすべてコメントアウトされている。  
+証明書を入手したのちにコメントを外してからsystemctl restartをしてやればよい。  
