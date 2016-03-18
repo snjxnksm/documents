@@ -38,3 +38,8 @@ springbootのプロジェクトを管理するために[gradle](../gradele/readm
   42. Sample Projectを指定する。  
   「java quickstart」を選択する。  
   43. 「完了」します。  
+
+# プロジェクト作成（外部サービス利用)
+
+[SPRING INITIALIZR bootstrap your application now](https://start.spring.io/)
+Spring Bootの雛形プロジェクトを作成できるサイトです。
