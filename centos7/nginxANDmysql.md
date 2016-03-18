@@ -122,3 +122,82 @@ systemctl stop nginx
 httpsでアクセスできるようにするための設定が入っている。  
 初期状態は中身がすべてコメントアウトされている。  
 証明書を入手したのちにコメントを外してからsystemctl restartをしてやればよい。  
+
+#### 設定の例題
+8080で稼働しているサービスを、httpsでつなげたい。
+8089で稼働しているサービスを、通常のhttpでつなげたい。
+
+```
+[practice@test01 ~]$ cat /etc/nginx/conf.d/default.conf
+server {
+    listen       80;
+    server_name  test.practice-test.com;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+        #root   /usr/share/nginx/html;
+        #index  index.html index.htm;
+        rewrite ^/(.+) $1 break;
+        proxy_pass http://127.0.0.1:8089/$1;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}
+```
+```
+[practice@test01 ~]$ cat /etc/nginx/conf.d/ssl.conf
+# HTTPS server
+
+server {
+    listen       443 ssl;
+    server_name  test.practice-test.com;
+
+    ssl_certificate      /etc/nginx/ssl/practice-test.com_ServerCA_2016.crt;
+    ssl_certificate_key  /etc/nginx/ssl/practice-test.com_2016.key;
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers   on;
+
+    location / {
+        rewrite ^/(.+) $1 break;
+        proxy_pass http://127.0.0.1:8080/$1;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect                        off;
+    }
+}
+```
