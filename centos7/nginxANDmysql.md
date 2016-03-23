@@ -182,7 +182,7 @@ server {
 
 server {
     listen       443 ssl;
-    server_name  test.practice-test.com;
+    server_name  practice-test.com;
 
     ssl_certificate      /etc/nginx/ssl/practice-test.com_ServerCA_2016.crt;
     ssl_certificate_key  /etc/nginx/ssl/practice-test.com_2016.key;
@@ -194,8 +194,7 @@ server {
     ssl_prefer_server_ciphers   on;
 
     location / {
-        rewrite ^/(.+) $1 break;
-        proxy_pass http://127.0.0.1:8080/$1;
+        proxy_pass http://127.0.0.1:8080/;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect                        off;
     }
