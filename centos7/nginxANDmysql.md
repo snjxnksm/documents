@@ -136,11 +136,9 @@ server {
     #charset koi8-r;
     #access_log  /var/log/nginx/log/host.access.log  main;
 
+
     location / {
-        #root   /usr/share/nginx/html;
-        #index  index.html index.htm;
-        rewrite ^/(.+) $1 break;
-        proxy_pass http://127.0.0.1:8089/$1;
+        proxy_pass http://127.0.0.1:8089;
     }
 
     #error_page  404              /404.html;
@@ -176,6 +174,10 @@ server {
     #}
 }
 ```
+
+httpsでアクセスすると8080サーバが応答する。  
+ただし、`https://FQDN/demoapp/` のみ、ローカルにある物理ファイルを対象とする。  
+
 ```
 [practice@test01 ~]$ cat /etc/nginx/conf.d/ssl.conf
 # HTTPS server
@@ -197,6 +199,11 @@ server {
         proxy_pass http://127.0.0.1:8080/;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect                        off;
+    }
+
+    location /demoapp {
+        alias   /usr/share/nginx/html;
+        index  index.html index.htm;
     }
 }
 ```
