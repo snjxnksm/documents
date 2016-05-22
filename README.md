@@ -21,6 +21,7 @@
 
 # Linux
 
+CentOS7を使った設定の実例  
 * [CentOS7](centos7/readme.md)
 
 # ソフトウェア
