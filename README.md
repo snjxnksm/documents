@@ -26,4 +26,5 @@ CentOS7を使った設定の実例
 
 # ソフトウェア
 
-* [Atomエディタ](software/atom.md)
+* [Atomエディタ](software/atom/atom.md)
+* [sourcetree](software/sourcetree/readme.md)
