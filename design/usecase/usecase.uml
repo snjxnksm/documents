@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+
+actor :外部機器: as ag
+actor :ユーザ: as vi
+actor :Authサーバー: as id
+
+package "管理サーバ"  {
+
+  actor :MySqlDBサーバー: as DB
+  package "管理Webアプリケーション" {
+
+    (ログイン) - id
+    (ログアウト) - id
+
+    (機器登録)-DB
+    (機器削除)-DB
+    (ログイン)-DB
+    (機器一覧取得)-DB
+    (ログアウト)-DB
+
+    ag-(機器登録)
+    ag-(機器削除)
+
+    vi -(ログイン)
+    vi-(機器一覧取得)
+    vi -(ログアウト)
+  }
+}
+
+@enduml
