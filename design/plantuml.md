@@ -13,5 +13,5 @@ PlantUMLを使えば、ソースはプレーンテキストで記述するので
 [シーケンス図１コード](seq/seq.uml)  
 
 * 例題 ユースケース  
-![ユースケース図](usecase/usecase.svg)  
+![ユースケース図](usecase/usecase.png)  
 [ユースケースコード](usecase/usecase.uml)  
