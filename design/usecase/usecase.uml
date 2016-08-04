@@ -3,28 +3,33 @@ left to right direction
 
 actor :外部機器: as ag
 actor :ユーザ: as vi
-actor :Authサーバー: as id
+actor :外部Authサーバー: as id
 
 package "管理サーバ"  {
 
   actor :MySqlDBサーバー: as DB
   package "管理Webアプリケーション" {
 
-    (ログイン) - id
-    (ログアウト) - id
+    usecase ログイン as login
+    usecase ログアウト as logout
+    usecase 機器登録 as regst
+    usecase 機器削除 as delete
 
-    (機器登録)-DB
-    (機器削除)-DB
-    (ログイン)-DB
+    login - id
+    logout - id
+
+    regst-DB
+    delete-DB
+    login-DB
     (機器一覧取得)-DB
-    (ログアウト)-DB
+    logout-DB
 
-    ag-(機器登録)
-    ag-(機器削除)
+    ag-regst
+    ag-delete
 
-    vi -(ログイン)
+    vi -login
     vi-(機器一覧取得)
-    vi -(ログアウト)
+    vi -logout
   }
 }
 
