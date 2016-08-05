@@ -1,0 +1,18 @@
+@startuml
+title 感想文書き
+
+package 外部サービス {
+  actor tumblr as tumblr
+  actor 国会図書館DB as ndl
+  actor Amazon as aws
+}
+
+actor ユーザ as user
+usecase ログイン as login
+
+actor データベース as db
+
+
+user - login
+
+@enduml
