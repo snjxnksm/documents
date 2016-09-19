@@ -7,12 +7,8 @@ Centos7サーバに対して実行環境を構築する手順を以下にメモ�
 
 1. yum用ライブラリの追加  
 ```
-※RPMFORGEを追加  
-rpm -ivh http://apt.sw.be/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
 ※EPELを追加
-rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
-※REMIを追加
-rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+yum install epel-release -y 
 ```  
 2. update  
 ```
