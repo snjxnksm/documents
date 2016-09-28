@@ -24,9 +24,9 @@ gradleの特徴は、antのような自由度とmavenのような強力なライ
 # 最初の一歩
 
 適当な作業フォルダを作成し、以下のコマンドを実行します。
-```
+~~~
  > gradle init
-```
+~~~
 同フォルダに、build.guradleが生成されます。
 これをもとに機能を拡張していきます。
 
@@ -34,7 +34,7 @@ gradleの特徴は、antのような自由度とmavenのような強力なライ
 
 build.guradleに記述を追加することで、ライブラリの管理を行います。
 以下は、[SpringBoot](../springboot/readme.md)を指定する場合。
-```
+~~~
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -55,7 +55,7 @@ dependencies {
     testCompile('com.jayway.restassured:rest-assured:2.4.1')
     testCompile("junit:junit:4.12")
 }
-```
+~~~
 依存関係を記述する文字列は、mavenライブラリと共有できます。
 http://mvnrepository.com/
 
